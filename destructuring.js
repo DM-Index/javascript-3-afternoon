@@ -117,6 +117,8 @@ function largeNumbers(object) {
 */
 
 function numberGroups(object) {
-  let { a, b, c } = object;
+  let { a = [], b, c } = object;
   return Math.max(...object);
 }
+
+//rewrite this with switch statements
