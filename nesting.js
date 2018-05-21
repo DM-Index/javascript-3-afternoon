@@ -49,7 +49,17 @@ var employees = [
     2. If the employee's first name is Lorie, change her department to 'HR'.
     3. Return the updated employee array.
 */
-function employeeUpdater() {}
+const employeeUpdater = () => {
+  employees.forEach((employee, index, array) => {
+    if (employee.firstName === "Theo") {
+      employees.splice(index, 1);
+    }
+    if (employee.firstName === "Lorie") {
+      employee.department = "HR";
+    }
+  });
+  return employees;
+};
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
@@ -64,7 +74,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+const removeDuplicates = () => {
+  for (let i = 0; i < workplaceAccidents.length; i++) {
+    for (let j = 0; j < workplaceAccidents.length; j++) {
+      if (workplaceAccidents[i] === workplaceAccidents[j] && i !== j) {
+        workplaceAccidents.splice(j, 1);
+        i--;
+      }
+    }
+  }
+  return workplaceAccidents;
+};
 
 ////////// PROBLEM 3 //////////
 
@@ -150,4 +170,13 @@ var numsArr = [[1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+const looper = () => {
+  for (let i = 0; i < numsArr.length; i++) {
+    for (let j = 0; j < numsArr[i].length; j++) {
+      numsArr[i][j] % 2 === 0
+        ? numsArr[i].splice(j, 1, "even")
+        : numsArr[i].splice(j, 1, "odd");
+    }
+  }
+  return numsArr;
+};
