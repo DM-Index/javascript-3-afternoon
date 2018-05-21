@@ -116,9 +116,19 @@ function largeNumbers(object) {
   Find the longest array and return that array.
 */
 
-function numberGroups(object) {
-  let { a = [], b, c } = object;
-  return Math.max(...object);
-}
+// function numberGroups(object) {
+//   let { a = [], b, c } = object;
+//   return Math.max(...object);
+// }
 
 //rewrite this with switch statements
+const numberGroups = ({ a, b, c }) => {
+  switch (Math.max(a.length, b.length, c.length)) {
+    case a.length:
+      return a;
+    case b.length:
+      return b;
+    case c.length:
+      return c;
+  }
+};

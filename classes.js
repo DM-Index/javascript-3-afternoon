@@ -37,7 +37,7 @@ class Employee {
     this.age = age;
   }
   makeWidget() {
-    return this.first_name + " " + this.last_name + " " + "Widget";
+    return `${this.first_name} ${this.last_name} Widget`;
   }
 }
 
@@ -57,14 +57,19 @@ class Employee {
   Call your new class Manager
 */
 
-class Manager {
-  constructor(first_name, last_name, email, age) {
+class Manager extends Employee {
+  constructor(first_name, last_name, email, age, reports) {
+    super(first_name, last_name, email, age);
     this.reports = [];
   }
-  hire(employee) {
-    reports.push(employee);
+
+  hire(Employee) {
+    this.reports.push(Employee);
   }
-  fire(index) {}
+
+  fire(val) {
+    this.reports.splice(val, 1);
+  }
 }
 
 ////////// PROBLEM 3 //////////
